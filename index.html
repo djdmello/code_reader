@@ -53,31 +53,31 @@ const constraints = {
 	}
 };
 
-function cameraStart(){
+
 // open the webcam stream
-	navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
 	// stream is a MediaStream object
-		video.srcObject = stream;
-		video.play();
+	video.srcObject = stream;
+	video.play();
 
 	// tell the canvas which resolution we ended up getting from the webcam
-		const track = stream.getVideoTracks()[0];
-		const actualSettings = track.getSettings();
-		console.log(actualSettings.width, actualSettings.height)
-		canvas.width = actualSettings.width;
-		canvas.height = actualSettings.height;
+	const track = stream.getVideoTracks()[0];
+	const actualSettings = track.getSettings();
+	console.log(actualSettings.width, actualSettings.height)
+	canvas.width = actualSettings.width;
+	canvas.height = actualSettings.height;
 
 	// every k milliseconds, we draw the contents of the video to the canvas and run the detector.
-		const timer = setInterval(detectSymbols, 250);
+	const timer = setInterval(detectSymbols, 250);
 
-	}).catch(function(error) => {
-		console.error("Oops. Something is broken.", error);
+}).catch(function(error) => {
+	console.error("Oops. Something is broken.", error);
 	//console.log(e.name + ":" + e.message);
 	//throw e
 
-	});
-}
-window.addEventListener("load", cameraStart, false);
+});
+
+
 
 function detectSymbols() {
 	// grab a frame from the media source and draw it to the canvas
