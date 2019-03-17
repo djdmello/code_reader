@@ -70,10 +70,10 @@ navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
 	// every k milliseconds, we draw the contents of the video to the canvas and run the detector.
 	const timer = setInterval(detectSymbols, 250);
 
-}).catch(function(error) => {
-	console.error("Oops. Something is broken.", error);
+}).catch((e) => {
+	//console.error("Oops. Something is broken.", error);
 	//console.log(e.name + ":" + e.message);
-	//throw e
+	throw e
 
 });
 
