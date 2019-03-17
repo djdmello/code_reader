@@ -35,8 +35,8 @@ const api = {
 const video = document.getElementById("live");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
-const desiredWidth = 200;
-const desiredHeight = 200;
+const desiredWidth = 1280;
+const desiredHeight = 720;
 
 // settings for the getUserMedia call
 const constraints = {
@@ -44,11 +44,8 @@ const constraints = {
 		// the browser will try to honor this resolution, but it may end up being lower.
 		width: desiredWidth,
 		height: desiredHeight,
-		facingMode: "user",
-		playsinline: true,
-		autplay: true,
-		muted: true,
-		audio: false
+		facingMode: "user"
+		
 		
 
 		
