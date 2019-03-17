@@ -37,17 +37,17 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext('2d');
 const desiredWidth = 1280;
 const desiredHeight = 720;
-
+video.setAttribute('autoplay', '');
+video.setAttribute('muted', '');
+video.setAttribute('playsinline', '');
 // settings for the getUserMedia call
 const constraints = {
+	audio: false,
 	video: {
 		// the browser will try to honor this resolution, but it may end up being lower.
 		width: desiredWidth,
 		height: desiredHeight,
-		facingMode: "user"
-		
-		
-
+		facingMode: 'user'
 		
 	}
 };
