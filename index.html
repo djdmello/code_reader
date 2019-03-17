@@ -10,7 +10,7 @@
 <body>
 	<div>
 		<!-- note that we hide the live video element using 'display:none', that way only the canvas is rendered -->
-		<video id="live" width="1280" height="720" autoplay style="border:5px solid #000000; display:none;"> </video>
+		<video id="live" width="320" height="240" autoplay style="border:5px solid #000000; display:none;"> </video>
 		<canvas id="canvas" style="border:5px solid #000000"> </canvas>
 	</div>
 
@@ -70,8 +70,8 @@ navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
 	const timer = setInterval(detectSymbols, 250);
 
 }).catch((e) => {
-	console.log(e.name + ":" + e.message);
-	//throw e
+	//console.log(e.name + ":" + e.message);
+	throw e
 
 });
 
