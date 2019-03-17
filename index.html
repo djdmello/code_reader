@@ -65,7 +65,9 @@ navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
 	const timer = setInterval(detectSymbols, 250);
 
 }).catch((e) => {
-	throw e
+	console.log(e.name + ":" + e.message);
+	//throw e
+
 });
 
 function detectSymbols() {
