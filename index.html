@@ -43,7 +43,7 @@ video.setAttribute('playsinline', '');
 video.setAttribute('controls', '');
 // settings for the getUserMedia call
 const constraints = {
-	audio: true,
+	audio: false,
 	video: {
 		// the browser will try to honor this resolution, but it may end up being lower.
 		width: desiredWidth,
